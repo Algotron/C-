@@ -5,7 +5,7 @@ using namespace std;
 
 #include "Pixel.h"
 #include "Ligne.h"
-//#include "Rectangle.h"
+#include "Rectangle.h"
 
 int  Menu();
 void Essai1();
@@ -130,7 +130,7 @@ void Essai2()
 //***********************************************************************************************
 void Essai3()
 {
-  /*cout << "(3.1) ***** Test du constructeur par defaut + setters de Rectangle ******************" << endl;
+  cout << "(3.1) ***** Test du constructeur par defaut + setters de Rectangle ******************" << endl;
   { 
     Rectangle r;
     cout << "r = " << r << endl;
@@ -162,7 +162,7 @@ void Essai3()
     cout << "--> Destruction objet de base" << endl;
     delete pr;
     cout << "Copie = " << r << endl << endl; 
-  }*/
+  }
 }
 
 //***********************************************************************************************

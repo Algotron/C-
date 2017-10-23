@@ -9,9 +9,9 @@ FORME = Forme1-3/
 
 .SILENT:
 
-Test4: $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o 
+Test4: $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o
 		echo Creation Test4
-		$(COMPIL) $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o -o $(EXECUTABLES)Test4 $(HEAD)
+		$(COMPIL) $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o -o $(EXECUTABLES)Test4 $(HEAD)
 
 Test3: $(TEST)3.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o
 		echo Creation Test3
@@ -30,6 +30,10 @@ Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o
 $(OBJECTS)Pixel.o: $(CLASSES)Pixel.cpp $(HEADERS)Pixel.h
 		echo creation Pixel.o
 		$(COMPIL) $(CLASSES)Pixel.cpp -c $(HEAD) -o $(OBJECTS)Pixel.o	
+
+$(OBJECTS)Rectangle.o: $(CLASSES)Rectangle.cpp $(HEADERS)Rectangle.h
+		echo creation Rectangle.o
+		$(COMPIL) $(CLASSES)Rectangle.cpp -c $(HEAD) -o $(OBJECTS)Rectangle.o
 
 $(OBJECTS)Ligne.o: $(CLASSES)Ligne.cpp $(HEADERS)Ligne.h
 		echo creation Ligne.o
