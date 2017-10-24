@@ -13,6 +13,7 @@ int Point::cpt = 0;
 
 Point::Point()//default
 {
+	cout << "Default constuctor Point" << endl;
 	setX(0);
 	setY(0);
 	cpt++;
@@ -20,6 +21,7 @@ Point::Point()//default
 
 Point::Point(const int X, const int Y)//initialisation
 {
+	cout << "Initialisation constuctor Point" << endl;
 	setX(X);
 	setY(Y);
 	cpt++;
@@ -27,6 +29,7 @@ Point::Point(const int X, const int Y)//initialisation
 
 Point::Point(const Point &obj)//copy
 {
+	cout << "Copy constuctor Point" << endl;
 	setX(obj.getX());
 	setY(obj.getY());
 	cpt++;

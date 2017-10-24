@@ -12,22 +12,22 @@ using namespace std;
 
 Pixel::Pixel():Forme()//default
 {
-
+	cout << "Default constuctor Pixel" << endl;
 }
 
 Pixel::Pixel(const char * ID, const Point &obj):Forme(ID, obj)//initialisation
 {
-
+	cout << "Partial initialisation constuctor Pixel" << endl;
 }
 
 Pixel::Pixel(const char * ID, const Point &objPoint, const Couleur * objCouleur, const int depth):Forme(ID, objPoint, objCouleur, depth)//initialisation
 {
-
+	cout << "Initialisation constuctor Rectangle" << endl;
 }
 
 Pixel::Pixel(Pixel &obj):Forme(obj)//copy
 {
-	
+	cout << "Copy constuctor Rectangle" << endl;
 }
 
 const char* Pixel::getInfos()

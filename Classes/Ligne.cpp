@@ -13,17 +13,20 @@ using namespace std;
 
 Ligne::Ligne():Forme()//default
 {
+	cout << "Default constuctor Ligne" << endl;
 	extremite.setX(0);
 	extremite.setY(0);
 }
 
 Ligne::Ligne(const char * ID, const Point &objPoint,const Point &objExtremite, const Couleur * objCouleur, const int depth):Forme(ID, objPoint, objCouleur, depth)//initialisation
 {
+	cout << "Initialisation constuctor Ligne" << endl;
 	setExtremite(objExtremite);
 }
 
 Ligne::Ligne(const Ligne &obj):Forme(obj)//copy
 {
+	cout << "Copy constuctor Ligne" << endl;
 	setExtremite(obj.getExtremite());
 }
 

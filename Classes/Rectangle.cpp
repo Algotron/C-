@@ -12,6 +12,7 @@ using namespace std;
 
 Rectangle::Rectangle():Forme()//default
 {
+	cout << "Default constuctor Rectangle" << endl;
 	setDimX(1);
 	setDimY(1);
 	setRempli(false);
@@ -19,6 +20,7 @@ Rectangle::Rectangle():Forme()//default
 
 Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, bool filled, const Couleur * objCouleur, const int depth):Forme(ID, objPoint, objCouleur, depth)//initialisation)
 {
+	cout << "Initialisation constuctor Rectangle" << endl;
 	setDimX(xDim);
 	setDimY(yDim);
 	setRempli(filled);
@@ -26,6 +28,7 @@ Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, 
 
 Rectangle::Rectangle(const Rectangle &obj):Forme(obj)//copy
 {
+	cout << "Copy constuctor Rectangle" << endl;
 	setDimX(obj.getDimX());
 	setDimY(obj.getDimY());
 	setRempli(obj.isRempli());
@@ -104,8 +107,6 @@ ostream& operator<< (ostream &os, const Rectangle &obj)
 	
 	return os;
 }
-
-
 
 
 Rectangle::~Rectangle()

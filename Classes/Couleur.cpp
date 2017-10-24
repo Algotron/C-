@@ -16,6 +16,7 @@ const Couleur Couleur::BLEU(0, 0, 255, "Bleu");
 
 Couleur::Couleur()//default
 {
+	cout << "Default constuctor Couleur" << endl;
 	name = NULL;
 	setRouge(0);
 	setVert(0);
@@ -25,6 +26,7 @@ Couleur::Couleur()//default
 }
 Couleur::Couleur(const int red, const int green, const int blue)//initialisation
 {
+	cout << "Partial initialisation constuctor Couleur" << endl;
 	name = NULL;
 	setRouge(red);
 	setVert(green);
@@ -35,6 +37,7 @@ Couleur::Couleur(const int red, const int green, const int blue)//initialisation
 
 Couleur::Couleur(const int red, const int green, const int blue, const char * nom)//initialisation
 {
+	cout << "Initialisation constuctor Couleur" << endl;
 	name = NULL;
 	setRouge(red);
 	setVert(green);
@@ -45,6 +48,7 @@ Couleur::Couleur(const int red, const int green, const int blue, const char * no
 
 Couleur::Couleur(const Couleur &obj)//copy
 {
+	cout << "Copy constuctor Couleur" << endl;
 	name = NULL;
 	setRouge(obj.getRouge());
 	setVert(obj.getVert());

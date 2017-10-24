@@ -173,7 +173,7 @@ void Essai3()
 //***********************************************************************************************
 void Essai4()
 {
-  /*srand((unsigned)time(NULL));
+  srand((unsigned)time(NULL));
 
   cout << "----- 4.1 Allocation dynamique de Formes -------------------------------------------------------" << endl;
   Forme* forme[10];
@@ -208,7 +208,7 @@ void Essai4()
   
   cout << "----- 4.4 Liberation memoire ----------------------------------------------------------------------------" << endl;
   for (int i=0 ; i<10 ; i++) delete forme[i];  // Tout se passe-t-il comme vous voulez ?
-  // Pour etre plus precis, quid des destructeurs et de la virtualite ?*/
+  // Pour etre plus precis, quid des destructeurs et de la virtualite ?
 }
 
 //***********************************************************************************************
@@ -219,7 +219,7 @@ void Essai4()
 //***********************************************************************************************
 void Essai5()
 {
- /* srand((unsigned)time(NULL));
+  srand((unsigned)time(NULL));
 
   cout << "----- 5.1 Allocation dynamique de Formes -------------------------------------------------------" << endl;
   Forme* forme[10];
@@ -258,6 +258,6 @@ void Essai5()
   cout << endl;
 
   cout << "----- 5.3 Liberation memoire ----------------------------------------------------------------------------" << endl;
-  for (int i=0 ; i<10 ; i++) delete forme[i];*/
+  for (int i=0 ; i<10 ; i++) delete forme[i];
 }
 
