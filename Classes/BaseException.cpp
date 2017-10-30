@@ -10,12 +10,20 @@ using namespace std;
 	
 BaseException::BaseException()//default
 {
-	strcpy(message, "Invalid Identifier");
+	message = NULL;
+	setMessage("Default Error");
 }
 
-BaseException::BaseException(BaseException &obj)//copy
+BaseException::BaseException(const char * M)//initialisation
 {
-	strcpy(message, obj.message);
+	message = NULL;
+	setMessage(M);
+}
+
+BaseException::BaseException(const BaseException &obj)//copy
+{
+	message = NULL;
+	setMessage(obj.what());
 }
 
 const char * BaseException::what() const
@@ -23,8 +31,19 @@ const char * BaseException::what() const
 	return message;
 }
 
+void BaseException::setMessage(const char * M)
+{
+	if(message)
+		delete message;
+	
+	message = new char[strlen(M) + 1];
+	strcpy(message, M);
+}
+
 BaseException::~BaseException()
 {
 	delete message;
 }
+
+
 

@@ -9,7 +9,7 @@ FORME = Forme1-3/
 
 .SILENT:
 
-Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)BaseException.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o 
+Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)BaseException.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o
 		echo Creation Test5
 		$(COMPIL) $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o -o $(EXECUTABLES)Test5 $(HEAD)
 

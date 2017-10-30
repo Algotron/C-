@@ -8,7 +8,7 @@
 using namespace std;
 
 #include "Rectangle.h"
-
+#include "BaseException.h"
 
 Rectangle::Rectangle():Forme()//default
 {
@@ -118,9 +118,15 @@ ostream& operator<< (ostream &os, const Rectangle &obj)
 
 void Rectangle::setId(const char * ID)
 {
-	if(ID[0] != 'R' || !isdigit(ID[1]) || !isdigit(ID[2]) || ID[3] != '\0')
-		throw BaseException();
-
+	if(strlen(ID) != 3)
+		throw BaseException("id must contain 3 char");
+		
+	if(ID[0] != 'R')
+		throw BaseException("id must begin with 'R'");
+		
+	if(!isdigit(ID[1]) || !isdigit(ID[2]))
+		throw BaseException("id must contain 2 digits after the letter");
+	
 	if(id)
 		delete id;
 	

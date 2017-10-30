@@ -8,6 +8,7 @@ using namespace std;
 #include "Pixel.h"
 #include "Ligne.h"
 #include "Rectangle.h"
+#include "BaseException.h"
 
 int  Menu();
 void Essai1();
@@ -99,9 +100,10 @@ void Essai1()
 		cout << "Identifiant encode = " << pf->getId() << endl << endl;
 	}
 	
-	catch(BaseException)
+	catch(BaseException obj)
 	{
 		cout << obj.what() << endl;
+		
 	}
 	catch(...)
 	{
@@ -123,23 +125,26 @@ void Essai2()
 	{
 		char txt[80];
 		cout << "Creation d'un Pixel..." << endl;
-		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		cout << "Encodez son identifiant : "; 
+		cin.getline(txt,80);
 		Pixel p(txt,Point(100,130),&Couleur::ROUGE,-10);
 		cout << "Pixel cree : " << p << endl << endl;
 
 		cout << "Creation d'une Ligne..." << endl;
-		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		cout << "Encodez son identifiant : "; 
+		cin.getline(txt,80);
 		Ligne l(txt,Point(100,130),Point(200,150),&Couleur::BLEU,-20);
 		cout << "Ligne creee : " << l << endl << endl;
 
 		cout << "Creation d'un Rectangle..." << endl;
-		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		cout << "Encodez son identifiant : "; 
+		cin.getline(txt,80);
 		Rectangle r(txt,Point(100,130),100,70,true,&Couleur::VERT,-30);
 		cout << "Rectangle cree : " << r << endl << endl;
 	}
-	catch (BaseException)
+	catch (BaseException obj)
 	{
-	cout << obj.what << endl;
+	cout << obj.what() << endl;
 	}
 	catch(...)
 	{

@@ -9,7 +9,7 @@ using namespace std;
 
 #include "Ligne.h"
 #include "Point.h"
-
+#include "BaseException.h"
 
 Ligne::Ligne():Forme()//default
 {
@@ -91,10 +91,16 @@ ostream& operator<< (ostream &os, const Ligne &obj)
 	return os;
 }
 
-void Pixel::setId(const char * ID)
+void Ligne::setId(const char * ID)
 {
-	if(ID[0] != 'L' || !isdigit(ID[1]) || !isdigit(ID[2]) || ID[3] != '\0')
-		throw BaseException();
+	if(strlen(ID) != 3)
+		throw BaseException("id must contain 3 char");
+		
+	if(ID[0] != 'L')
+		throw BaseException("id must begin with 'L'");
+		
+	if(!isdigit(ID[1]) || !isdigit(ID[2]))
+		throw BaseException("id must contain 2 digits after the letter");
 
 	if(id)
 		delete id;

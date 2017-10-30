@@ -9,11 +9,13 @@ class BaseException
 	
 	public:
 	BaseException();//default
-	BaseException(BaseException &);//copy
+	BaseException(const char *);//initialisation
+	BaseException(const BaseException &);//copy
 	
 	const char * what() const;
+	void setMessage(const char *);
 	
-	~BaseException();
+	virtual ~BaseException();
 	
 };
 
