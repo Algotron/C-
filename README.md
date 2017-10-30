@@ -7,7 +7,7 @@ Class Couleur :
 	char * name;
 	static int cpt;
 	
-Class Forme :
+Class Forme (abstract) :
 	char * id;
 	Point position;
 	const Couleur * couleur;
@@ -15,22 +15,31 @@ Class Forme :
 	static int cpt;
 	char * infos;
 	
-Class Ligne (inherits of Forme) :
-	Point extremite;
-	
-Class Pixel (inherits of Forme) :
-	No atribute
-
 Class Point :
 	int x;
 	int y;
 	static int cpt;
+	
+Class Pixel (inherits of Forme) :
+	No atribute
+
+Class Ligne (inherits of Forme) :
+	Point extremite;
 
 Class Rectangle (inherits of Forme) :
 	int dimX;
 	int dimY;
 	bool rempli;
+
+Class BaseException:
+	char * message;
 	
+Class InvalidColorException (inherits of BaseException) :
+	bool Red;
+	bool Green;
+	bool Blue;
+
+
 
 
 
