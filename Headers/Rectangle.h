@@ -21,10 +21,14 @@ class Rectangle: public Forme
 	
 	int getDimX() const;
 	void setDimX(int dim);
+	
 	int getDimY() const;
 	void setDimY(int dim);
+	
 	bool isRempli() const;
 	void setRempli(bool filled);
+	
+	void setId(const char *);
 	
 	const char* getInfos(void);
 	

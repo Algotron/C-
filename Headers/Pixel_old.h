@@ -21,8 +21,6 @@ class Pixel: public Forme
 	Pixel(Pixel&);//copy
 
 	const char* getInfos();
-	
-	void setId(const char *);
 
 	~Pixel();
 };

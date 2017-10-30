@@ -9,6 +9,10 @@ FORME = Forme1-3/
 
 .SILENT:
 
+Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)BaseException.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o 
+		echo Creation Test5
+		$(COMPIL) $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o -o $(EXECUTABLES)Test5 $(HEAD)
+
 Test4: $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o
 		echo Creation Test4
 		$(COMPIL) $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o -o $(EXECUTABLES)Test4 $(HEAD)
@@ -26,6 +30,10 @@ Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o
 		$(COMPIL) $(TEST)1.cpp $(OBJECTS)Couleur.o -o $(EXECUTABLES)Test1 $(HEAD)
 
 
+
+$(OBJECTS)BaseException.o: $(CLASSES)BaseException.cpp $(HEADERS)BaseException.h
+		echo creation BaseException.o
+		$(COMPIL) $(CLASSES)BaseException.cpp -c $(HEAD) -o $(OBJECTS)BaseException.o
 
 $(OBJECTS)Pixel.o: $(CLASSES)Pixel.cpp $(HEADERS)Pixel.h
 		echo creation Pixel.o
@@ -60,5 +68,5 @@ clean:
 		rm $(OBJECTS)*.o
 		
 E: 
-	./Executables/Test4
+	./Executables/Test5
 

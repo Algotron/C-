@@ -27,7 +27,10 @@ Class Point :
 	static int cpt;
 
 Class Rectangle (inherits of Forme) :
-
+	int dimX;
+	int dimY;
+	bool rempli;
+	
 
 
 

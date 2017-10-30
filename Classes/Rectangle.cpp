@@ -13,14 +13,19 @@ using namespace std;
 Rectangle::Rectangle():Forme()//default
 {
 	cout << "Default constuctor Rectangle" << endl;
+	
+	id = NULL;
 	setDimX(1);
 	setDimY(1);
 	setRempli(false);
 }
 
-Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, bool filled, const Couleur * objCouleur, const int depth):Forme(ID, objPoint, objCouleur, depth)//initialisation)
+Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, bool filled, const Couleur * objCouleur, const int depth):Forme(objPoint, objCouleur, depth)//initialisation)
 {
 	cout << "Initialisation constuctor Rectangle" << endl;
+	
+	id = NULL;
+	setId(ID);
 	setDimX(xDim);
 	setDimY(yDim);
 	setRempli(filled);
@@ -29,6 +34,9 @@ Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, 
 Rectangle::Rectangle(const Rectangle &obj):Forme(obj)//copy
 {
 	cout << "Copy constuctor Rectangle" << endl;
+	
+	id = NULL;
+	setId(obj.getId());
 	setDimX(obj.getDimX());
 	setDimY(obj.getDimY());
 	setRempli(obj.isRempli());
@@ -107,6 +115,19 @@ ostream& operator<< (ostream &os, const Rectangle &obj)
 	
 	return os;
 }
+
+void Rectangle::setId(const char * ID)
+{
+	if(ID[0] != 'R' || !isdigit(ID[1]) || !isdigit(ID[2]) || ID[3] != '\0')
+		throw BaseException();
+
+	if(id)
+		delete id;
+	
+	id = new  char[strlen(ID) + 1];
+	strcpy(id, ID);
+}
+
 
 
 Rectangle::~Rectangle()

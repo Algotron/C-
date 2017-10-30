@@ -2,6 +2,7 @@
 #include <iostream>
 #include <time.h>
 
+
 using namespace std;
 
 #include "Pixel.h"
@@ -73,32 +74,40 @@ void Essai1()
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
   // en particulier : afficher le message de l'exception lancee
 
-  // ... a remplacer
-  {
-    Forme *pf;
-    int n = rand()%3;
-    switch(n)
-    {
-      case 0 : pf = new Pixel();
-               cout << "Creation d'un Pixel par defaut..." << endl;
-               break;
+	try
+	{
+		Forme *pf;
+		int n = rand()%3;
+		switch(n)
+		{
+			case 0 : pf = new Pixel();
+		           cout << "Creation d'un Pixel par defaut..." << endl;
+		           break;
 
-      case 1 : pf = new Ligne();
-               cout << "Creation d'une Ligne par defaut..." << endl;
-               break;
+		 	case 1 : pf = new Ligne();
+		           cout << "Creation d'une Ligne par defaut..." << endl;
+		           break;
 
-      case 2 : pf = new Rectangle();
-               cout << "Creation d'un Rectangle par defaut..." << endl;
-               break;
-    }
+		 	case 2 : pf = new Rectangle();
+		           cout << "Creation d'un Rectangle par defaut..." << endl;
+		           break;
+		}
 
-    char txt[80];
-    cout << "Encodez son identifiant : "; cin.getline(txt,80);
-    pf->setId(txt);  // !!!
-    cout << "Identifiant encode = " << pf->getId() << endl << endl;
-  }
-  // ... a remplacer
-  
+		char txt[80];
+		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		pf->setId(txt);  // !!!
+		cout << "Identifiant encode = " << pf->getId() << endl << endl;
+	}
+	
+	catch(BaseException)
+	{
+		cout << obj.what() << endl;
+	}
+	catch(...)
+	{
+		cout << "Unknown error occured" << endl;
+	}
+
   cout << endl;
 }
 
@@ -110,32 +119,39 @@ void Essai2()
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
   // en particulier : afficher le message de l'exception lancee
 
-  // ...
-  {
-    char txt[80];
-    cout << "Creation d'un Pixel..." << endl;
-    cout << "Encodez son identifiant : "; cin.getline(txt,80);
-    Pixel p(txt,Point(100,130),&Couleur::ROUGE,-10);
-    cout << "Pixel cree : " << p << endl << endl;
+	try
+	{
+		char txt[80];
+		cout << "Creation d'un Pixel..." << endl;
+		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		Pixel p(txt,Point(100,130),&Couleur::ROUGE,-10);
+		cout << "Pixel cree : " << p << endl << endl;
 
-    cout << "Creation d'une Ligne..." << endl;
-    cout << "Encodez son identifiant : "; cin.getline(txt,80);
-    Ligne l(txt,Point(100,130),Point(200,150),&Couleur::BLEU,-20);
-    cout << "Ligne creee : " << l << endl << endl;
+		cout << "Creation d'une Ligne..." << endl;
+		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		Ligne l(txt,Point(100,130),Point(200,150),&Couleur::BLEU,-20);
+		cout << "Ligne creee : " << l << endl << endl;
 
-    cout << "Creation d'un Rectangle..." << endl;
-    cout << "Encodez son identifiant : "; cin.getline(txt,80);
-    Rectangle r(txt,Point(100,130),100,70,true,&Couleur::VERT,-30);
-    cout << "Rectangle cree : " << r << endl << endl;
-  }
-  // ...
+		cout << "Creation d'un Rectangle..." << endl;
+		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		Rectangle r(txt,Point(100,130),100,70,true,&Couleur::VERT,-30);
+		cout << "Rectangle cree : " << r << endl << endl;
+	}
+	catch (BaseException)
+	{
+	cout << obj.what << endl;
+	}
+	catch(...)
+	{
+		cout << "Unknown error occured" << endl;
+	}
   
   cout << endl;
 }
 
 //**********************************************************************************************
 void Essai3()
-{
+{/*
 
   cout << "----- 3. Test des setXXX() de la classe Couleur ------------------------------------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -155,12 +171,12 @@ void Essai3()
   }
   // ...
   
-  cout << endl;
+  cout << endl;*/
 }
 
 //**********************************************************************************************
 void Essai4()
-{
+{/*
 
   cout << "----- 4. Test des constructeurs de la classe Couleur -------------------------------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -180,12 +196,12 @@ void Essai4()
   }
   // ...
   
-  cout << endl;
+  cout << endl;*/
 }
 
 //**********************************************************************************************/
 void Essai5()
-{
+{/*
   cout << "----- 5. Gestion de plusieurs exceptions simultanement ------------------------------" << endl;
   // A COMPLETER : Traitez TOUTES les exceptions susceptible d'etre lancee par le bloc de code suivant (try...catch)
 
@@ -205,7 +221,7 @@ void Essai5()
   }
   // ...
 
-  cout << endl;
+  cout << endl;*/
 }
 
 

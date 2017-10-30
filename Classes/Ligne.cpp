@@ -14,19 +14,27 @@ using namespace std;
 Ligne::Ligne():Forme()//default
 {
 	cout << "Default constuctor Ligne" << endl;
+	
+	id = NULL;
 	extremite.setX(0);
 	extremite.setY(0);
 }
 
-Ligne::Ligne(const char * ID, const Point &objPoint,const Point &objExtremite, const Couleur * objCouleur, const int depth):Forme(ID, objPoint, objCouleur, depth)//initialisation
+Ligne::Ligne(const char * ID, const Point &objPoint,const Point &objExtremite, const Couleur * objCouleur, const int depth):Forme(objPoint, objCouleur, depth)//initialisation
 {
 	cout << "Initialisation constuctor Ligne" << endl;
+	
+	id = NULL;
+	setId(ID);
 	setExtremite(objExtremite);
 }
 
 Ligne::Ligne(const Ligne &obj):Forme(obj)//copy
 {
 	cout << "Copy constuctor Ligne" << endl;
+	
+	id = NULL;
+	setId(obj.getId());
 	setExtremite(obj.getExtremite());
 }
 
@@ -82,6 +90,19 @@ ostream& operator<< (ostream &os, const Ligne &obj)
 	
 	return os;
 }
+
+void Pixel::setId(const char * ID)
+{
+	if(ID[0] != 'L' || !isdigit(ID[1]) || !isdigit(ID[2]) || ID[3] != '\0')
+		throw BaseException();
+
+	if(id)
+		delete id;
+	
+	id = new  char[strlen(ID) + 1];
+	strcpy(id, ID);
+}
+
 
 
 Ligne::~Ligne()

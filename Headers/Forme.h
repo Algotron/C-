@@ -17,11 +17,11 @@ class Forme
 	
 	public:
 	Forme();//default
-	Forme(const char*, const Point &obj);//initialisation
-	Forme(const char*, const Point &objPoint, const Couleur * objCouleur, const int);//initialisation
+	Forme(const Point &obj);//initialisation
+	Forme(const Point &objPoint, const Couleur * objCouleur, const int);//initialisation
 	Forme(const Forme &obj);//copy
 	
-	void setId(const char*);
+	virtual void setId(const char*) = 0;
 	const char* getId() const;
 	
 	void setPosition(const Point &obj);

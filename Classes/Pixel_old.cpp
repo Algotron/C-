@@ -8,36 +8,26 @@
 using namespace std;
 
 #include "Pixel.h"
-#include "BaseException.h"
 
 
 Pixel::Pixel():Forme()//default
 {
 	cout << "Default constuctor Pixel" << endl;
-	id = NULL;
 }
 
-Pixel::Pixel(const char * ID, const Point &obj):Forme(obj)//initialisation
+Pixel::Pixel(const char * ID, const Point &obj):Forme(ID, obj)//initialisation
 {
 	cout << "Partial initialisation constuctor Pixel" << endl;
-	id = NULL;
-	setId(ID);
 }
 
-Pixel::Pixel(const char * ID,const Point &objPoint, const Couleur * objCouleur, const int depth):Forme(objPoint, objCouleur, depth)//initialisation
+Pixel::Pixel(const char * ID, const Point &objPoint, const Couleur * objCouleur, const int depth):Forme(ID, objPoint, objCouleur, depth)//initialisation
 {
 	cout << "Initialisation constuctor Rectangle" << endl;
-	
-	id = NULL;
-	setId("ID");
 }
 
 Pixel::Pixel(Pixel &obj):Forme(obj)//copy
 {
 	cout << "Copy constuctor Rectangle" << endl;
-		
-	id = NULL;
-	setId(obj.getId());
 }
 
 const char* Pixel::getInfos()
@@ -104,19 +94,6 @@ ostream& operator<< (ostream &os, const Pixel &obj)
 	
 	return os;
 }
-
-void Pixel::setId(const char * ID)
-{
-	if(ID[0] != 'P' || !isdigit(ID[1]) || !isdigit(ID[2]) || ID[3] != '\0')
-		throw BaseException();
-
-	if(id)
-		delete id;
-	
-	id = new  char[strlen(ID) + 1];
-	strcpy(id, ID);
-}
-
 
 Pixel::~Pixel()
 {

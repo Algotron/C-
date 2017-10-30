@@ -20,6 +20,8 @@ class Ligne:public Forme
 	void setExtremite(const Point&);
 	Point getExtremite() const;
 	
+	void setId(const char *); 
+	
 	const char* getInfos(void);
 	
 	~Ligne();
