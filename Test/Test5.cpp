@@ -156,77 +156,101 @@ void Essai2()
 
 //**********************************************************************************************
 void Essai3()
-{/*
+{
 
   cout << "----- 3. Test des setXXX() de la classe Couleur ------------------------------------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
   // en particulier : afficher le message de l'exception lancee ET la (les) composante(s) invalide(s)
 
-  // ...
-  {
-    Couleur c;
-    int val;
-    cout << "Composante Rouge : "; cin >> val; cin.ignore();
-    c.setRouge(val);
-    cout << "Composante Verte : "; cin >> val; cin.ignore();
-    c.setVert(val);
-    cout << "Composante Bleue : "; cin >> val; cin.ignore();
-    c.setBleu(val);
-    cout << "Couleur encodee = " << c << endl << endl;
-  }
-  // ...
-  
-  cout << endl;*/
+	try 
+	{
+		Couleur c;
+		int val;
+		cout << "Composante Rouge : "; cin >> val; cin.ignore();
+		c.setRouge(val);
+		cout << "Composante Verte : "; cin >> val; cin.ignore();
+		c.setVert(val);
+		cout << "Composante Bleue : "; cin >> val; cin.ignore();
+		c.setBleu(val);
+		cout << "Couleur encodee = " << c << endl << endl;
+    }
+	catch(InvalidColorException obj)
+	{
+	
+	}
+  	catch(...)
+  	{
+  	
+  	}
+  cout << endl;
 }
 
 //**********************************************************************************************
 void Essai4()
-{/*
+{
 
   cout << "----- 4. Test des constructeurs de la classe Couleur -------------------------------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
   // en particulier : afficher le message de l'exception lancee ET la (les) composante(s) invalide(s)
 
-  // ...
-  {
-    int r,v,b;
-    cout << "Creation de couleurs..." << endl;
-    cout << "Composante Rouge : "; cin >> r; cin.ignore();
-    cout << "Composante Verte : "; cin >> v; cin.ignore();
-    cout << "Composante Bleue : "; cin >> b; cin.ignore();
-    Couleur c1(r,v,b);
-    Couleur c2(r,v,b,"boufff");
-    cout << "Couleur encodee sans nom = " << c1 << endl;
-    cout << "Couleur encodee avec nom = " << c2 << endl << endl;
-  }
-  // ...
-  
-  cout << endl;*/
+	try
+	{
+		int r,v,b;
+		cout << "Creation de couleurs..." << endl;
+		cout << "Composante Rouge : "; cin >> r; cin.ignore();
+		cout << "Composante Verte : "; cin >> v; cin.ignore();
+		cout << "Composante Bleue : "; cin >> b; cin.ignore();
+		Couleur c1(r,v,b);
+		Couleur c2(r,v,b,"boufff");
+		cout << "Couleur encodee sans nom = " << c1 << endl;
+		cout << "Couleur encodee avec nom = " << c2 << endl << endl;
+	}	
+	catch(InvalidColorException obj)
+	{
+
+	}
+	catch(...)
+	{
+	
+	}
+
+  cout << endl;
 }
 
 //**********************************************************************************************/
 void Essai5()
-{/*
+{
   cout << "----- 5. Gestion de plusieurs exceptions simultanement ------------------------------" << endl;
   // A COMPLETER : Traitez TOUTES les exceptions susceptible d'etre lancee par le bloc de code suivant (try...catch)
 
-  // ...
-  {
-    int r,v,b;
-    cout << "--> Creation d'une Couleur..." << endl;
-    cout << "Composante Rouge : "; cin >> r; cin.ignore();
-    cout << "Composante Verte : "; cin >> v; cin.ignore();
-    cout << "Composante Bleue : "; cin >> b; cin.ignore();
-    Couleur c1(r,v,b,"Ma Couleur");
-    cout << "--> Creation d'une Ligne de cette couleur..." << endl;
-    char txt[80];
-    cout << "Encodez son identifiant : "; cin.getline(txt,80);
-    Ligne l(txt,Point(100,130),Point(200,150),&c1,-20);
-    cout << "Ligne creee : " << l << endl << endl;
-  }
-  // ...
+	try
+  	{
+		int r,v,b;
+		cout << "--> Creation d'une Couleur..." << endl;
+		cout << "Composante Rouge : "; cin >> r; cin.ignore();
+		cout << "Composante Verte : "; cin >> v; cin.ignore();
+		cout << "Composante Bleue : "; cin >> b; cin.ignore();
+		Couleur c1(r,v,b,"Ma Couleur");
+		cout << "--> Creation d'une Ligne de cette couleur..." << endl;
+		char txt[80];
+		cout << "Encodez son identifiant : "; cin.getline(txt,80);
+		Ligne l(txt,Point(100,130),Point(200,150),&c1,-20);
+		cout << "Ligne creee : " << l << endl << endl;
+	}
+	catch(InvalidColorException obj)
+	{
+	
+	}
+	catch(BaseException E)
+	{
+	
+	}
+	catch(...)
+	{
+	
+	}
 
-  cout << endl;*/
+  cout << endl;
 }
 
 

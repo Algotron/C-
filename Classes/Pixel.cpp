@@ -28,10 +28,8 @@ Pixel::Pixel(const char * ID,const Point &objPoint, const Couleur * objCouleur, 
 {
 	cout << "Initialisation constuctor Rectangle" << endl;
 	
-	cout << *ID << endl;
-	
 	id = NULL;
-	setId("ID");
+	setId(ID);
 }
 
 Pixel::Pixel(Pixel &obj):Forme(obj)//copy
@@ -110,10 +108,8 @@ ostream& operator<< (ostream &os, const Pixel &obj)
 void Pixel::setId(const char * ID)
 {
 	if(strlen(ID) != 3)
-	{
-		cout << *ID << endl;
 		throw BaseException("id must contain 3 char");
-	}
+
 	if(ID[0] != 'P')
 		throw BaseException("id must begin with 'P'");
 		

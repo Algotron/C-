@@ -67,7 +67,7 @@ int Menu()
 void Essai1()
 {
   cout << "----- 1.1 Test des constructeurs de Pixel ------------------------------------" << endl;
-  Pixel p1,p2("PT56",Point(120,200)),p3("A23",Point(200,400),&Couleur::BLEU,-10),p4(p3);
+  Pixel p1,p2("P56",Point(120,200)),p3("P23",Point(200,400),&Couleur::BLEU,-10),p4(p3);
   cout << "--> p1 (defaut) : " << p1 << endl;
   cout << "--> p2 (initialisation partiel) : " << p2 << endl;
   cout << "--> p3 (initialisation complet) : " << p3 << endl;
@@ -102,7 +102,7 @@ void Essai2()
 
   cout << "(2.2) ***** Test du constructeur d'initialisation + getters de Ligne ****************" << endl;
   { 
-    Ligne l("L25U",Point(30,90),Point(200,90),&Couleur::ROUGE,-20);
+    Ligne l("L25",Point(30,90),Point(200,90),&Couleur::ROUGE,-20);
 
     cout << "l = " << l << endl;
     cout << "Extremite de l = " << l.getExtremite() << endl;
@@ -111,7 +111,7 @@ void Essai2()
 
   cout << "(2.3) ***** Test du constructeur de copie de Ligne **********************************" << endl;
   {
-    Ligne *pl = new Ligne("EER12",Point(30,90),Point(200,90),&Couleur::ROUGE,-20);
+    Ligne *pl = new Ligne("L12",Point(30,90),Point(200,90),&Couleur::ROUGE,-20);
     cout << "Objet de base = " << *pl << endl;
 
     Ligne l(*pl);
@@ -144,7 +144,7 @@ void Essai3()
 
   cout << "(3.2) ***** Test du constructeur d'initialisation + getters de Rectangle ************" << endl;
   { 
-    Rectangle r("R1112",Point(40,10),60,150,false,&Couleur::VERT,-30);
+    Rectangle r("R11",Point(40,10),60,150,false,&Couleur::VERT,-30);
     cout << "r = " << r << endl;
     cout << "Largeur de r = " << r.getDimX() << endl;
     cout << "Hauteur de r = " << r.getDimY() << endl;
@@ -155,7 +155,7 @@ void Essai3()
 
   cout << "(3.3) ***** Test du constructeur de copie de Rectangle ******************************" << endl;
   {
-    Rectangle *pr = new Rectangle("RR11",Point(50,20),200,100,true,&Couleur::BLEU,-20);
+    Rectangle *pr = new Rectangle("R12",Point(50,20),200,100,true,&Couleur::BLEU,-20);
     cout << "Objet de base = " << *pr << endl;
 
     Rectangle r(*pr);
@@ -230,15 +230,15 @@ void Essai5()
     int n = rand()%3;
     switch(n)
     {
-      case 0 : forme[i] = new Pixel("P009",Point(200,400),&Couleur::BLEU,-10);
+      case 0 : forme[i] = new Pixel("P00",Point(200,400),&Couleur::BLEU,-10);
                cout << "Pixel" << endl;
                break;
 
-      case 1 : forme[i] = new Ligne("LLL7",Point(30,90),Point(200,90),&Couleur::ROUGE,-20);
+      case 1 : forme[i] = new Ligne("L77",Point(30,90),Point(200,90),&Couleur::ROUGE,-20);
                cout << "Ligne" << endl;
                break;
 
-      case 2 : forme[i] = new Rectangle("RR44",Point(50,20),200,100,true,&Couleur::BLEU,-20);
+      case 2 : forme[i] = new Rectangle("R44",Point(50,20),200,100,true,&Couleur::BLEU,-20);
                cout << "Rectangle" << endl;
     }
   }

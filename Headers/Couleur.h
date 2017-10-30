@@ -25,6 +25,8 @@ class Couleur
 	char * name;
 	static int cpt;
 	
+	void invalidColor(const char *, int, int, int);
+	
 	public:
 	Couleur();//default
 	Couleur(const int, const int, const int);//initialisation
@@ -52,7 +54,6 @@ class Couleur
 	static const Couleur BLEU;
 	
 	int getLuminance() const;
-	
 
 	Couleur& operator= (const Couleur&);
 	Couleur& operator++ ();

@@ -27,6 +27,9 @@ Couleur::Couleur()//default
 Couleur::Couleur(const int red, const int green, const int blue)//initialisation
 {
 	cout << "Partial initialisation constuctor Couleur" << endl;
+	
+	invalidColor(red, green, blue);
+	
 	name = NULL;
 	setRouge(red);
 	setVert(green);
@@ -38,6 +41,9 @@ Couleur::Couleur(const int red, const int green, const int blue)//initialisation
 Couleur::Couleur(const int red, const int green, const int blue, const char * nom)//initialisation
 {
 	cout << "Initialisation constuctor Couleur" << endl;
+	
+	invalidColor(red, green, blue);
+	
 	name = NULL;
 	setRouge(red);
 	setVert(green);
@@ -59,7 +65,9 @@ Couleur::Couleur(const Couleur &obj)//copy
 
 void Couleur::setRouge(const int red)
 {
-	if(red <= 255 && red >= 0)
+	if(red > 255 || red < 0)
+		throw InvalidColorException("Invalid Color!", false, true, true);
+	else
 		R = red;
 }
 
@@ -70,7 +78,9 @@ int Couleur::getRouge() const
 
 void Couleur::setVert(const int green)
 {
-	if(green <= 255 && green >= 0)
+	if(green > 255 || green < 0)
+		throw InvalidColorException("Invalid Color!",true ,false , true);
+	else
 		G = green;
 }
 
@@ -81,7 +91,9 @@ int Couleur::getVert() const
 
 void Couleur::setBleu(const int blue)
 {
-	if(blue <= 255 && blue >= 0)
+	if(blue > 255 || blue < 0)
+		throw InvalidColorException("Invalid Color!", true, true, false);
+	else
 		B = blue;
 }
 
@@ -424,6 +436,41 @@ Couleur Couleur::operator-- (int)
 	
 	return objTemp;
 }
+
+void Couleur::invalidColor(int r, int g, int b)
+{
+	bool Red, Green, Blue, flag = false;
+	
+	if(r < 0 || r > 255)
+	{
+		Red = false;
+		flag = true;
+	}
+	else
+		Red = true;
+		
+	if(g < 0 || g > 255)
+	{
+		Green = false;
+		flag = true;
+	}
+	else
+		Green = true;
+
+	if(b < 0 || b() > 255)
+	{
+		Blue = false;
+		flag = true;
+	}
+	else
+		Blue = true;
+		
+	if(flag)
+		throw InvalidColorException("Invalid Color!"Red, Green, Blue);
+	else
+		return 1;
+}
+
 
 Couleur::~Couleur()
 {
