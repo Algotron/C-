@@ -98,7 +98,7 @@ ostream& operator<< (ostream &os, const Pixel &obj)
 	os << "Position : " << obj.position << endl;
 	
 	if(obj.getCouleur())
-		os << "Couleur : " << obj.getCouleur() << endl;
+		os << "Couleur : " << *(obj.getCouleur()) << endl;
 		
 	os << "Profondeur : " << obj.getProfondeur() << endl;
 	

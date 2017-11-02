@@ -9,6 +9,7 @@ using namespace std;
 #include "Ligne.h"
 #include "Rectangle.h"
 #include "BaseException.h"
+#include "InvalidColorException.h"
 
 int  Menu();
 void Essai1();

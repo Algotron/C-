@@ -13,14 +13,18 @@ class InvalidColorException: public BaseException
 	
 	public:
 	InvalidColorException();//default
-	InvalidColorException(char *, bool, bool, bool);//initialisation
+	InvalidColorException(const char *, bool, bool, bool);//initialisation
 	InvalidColorException(const InvalidColorException &);//copy
 	
-	bool rougeValide() const;
-	bool rougeValide() const;
-	bool rougeValide() const;
+	void setRed(bool);
+	void setGreen(bool);
+	void setBlue(bool);
 	
-	~Rectangle();
+	bool rougeValide() const;
+	bool vertValide() const;
+	bool bleuValide() const;
+	
+	~InvalidColorException();
 	
 };
 

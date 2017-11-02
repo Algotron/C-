@@ -9,27 +9,47 @@ FORME = Forme1-3/
 
 .SILENT:
 
-Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)BaseException.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o
+ALL : Test1 Test2 Test3 Test4 Test5
+
+Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
+		echo Creation Test6
+		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o -o $(EXECUTABLES)Test5 $(HEAD)
+
+Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
 		echo Creation Test5
-		$(COMPIL) $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o -o $(EXECUTABLES)Test5 $(HEAD)
+		$(COMPIL) $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o -o $(EXECUTABLES)Test5 $(HEAD)
 
-Test4: $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)BaseException.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o
+
+
+Test4: $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
 		echo Creation Test4
-		$(COMPIL) $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o -o $(EXECUTABLES)Test4 $(HEAD) $(HEAD)
+		$(COMPIL) $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o -o $(EXECUTABLES)Test4 $(HEAD) $(HEAD)
 
-Test3: $(TEST)3.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o
+
+
+Test3: $(TEST)3.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o $(OBJECTS)InvalidColorException.o $(OBJECTS)BaseException.o
 		echo Creation Test3
-		$(COMPIL) $(TEST)3.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o -o $(EXECUTABLES)Test3 $(HEAD)
+		$(COMPIL) $(TEST)3.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o $(OBJECTS)InvalidColorException.o $(OBJECTS)BaseException.o -o $(EXECUTABLES)Test3 $(HEAD)
 		
-Test2: $(TEST)2.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o
+		
+		
+Test2: $(TEST)2.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o $(OBJECTS)InvalidColorException.o $(OBJECTS)BaseException.o
 		echo Creation Test2
-		$(COMPIL) $(TEST)2.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o $(HEAD)$(FORME) $(HEAD) -o $(EXECUTABLES)Test2
+		$(COMPIL) $(TEST)2.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)oldForme.o $(OBJECTS)InvalidColorException.o $(OBJECTS)BaseException.o $(HEAD)$(FORME) $(HEAD) -o $(EXECUTABLES)Test2
 		
-Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o
+		
+		
+Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o $(OBJECTS)InvalidColorException.o $(OBJECTS)BaseException.o
 		echo Creation Test1
-		$(COMPIL) $(TEST)1.cpp $(OBJECTS)Couleur.o -o $(EXECUTABLES)Test1 $(HEAD)
+		$(COMPIL) $(TEST)1.cpp $(OBJECTS)Couleur.o $(OBJECTS)InvalidColorException.o $(OBJECTS)BaseException.o -o $(EXECUTABLES)Test1 $(HEAD)
 
 
+
+
+
+$(OBJECTS)InvalidColorException.o: $(CLASSES)InvalidColorException.cpp $(HEADERS)InvalidColorException.h
+		echo creation InvalidColorException.o
+		$(COMPIL) $(CLASSES)InvalidColorException.cpp -c $(HEAD) -o $(OBJECTS)InvalidColorException.o
 
 $(OBJECTS)BaseException.o: $(CLASSES)BaseException.cpp $(HEADERS)BaseException.h
 		echo creation BaseException.o
@@ -67,6 +87,25 @@ $(OBJECTS)oldForme.o: $(CLASSES)$(FORME)Forme.cpp $(HEADERS)$(FORME)Forme.h
 clean:
 		rm $(OBJECTS)*.o
 		
-E: 
+		
+1: 
+	./Executables/Test1		
+		
+2: 
+	./Executables/Test2
+	
+3: 
+	./Executables/Test3	
+		
+4: 
+	./Executables/Test4		
+			
+5: 
 	./Executables/Test5
+	
+6: 
+	./Executables/Test6
+	
+7: 
+	./Executables/Test7
 

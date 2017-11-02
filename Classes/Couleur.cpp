@@ -8,6 +8,7 @@
 using namespace std;
 
 #include "Couleur.h"
+#include "InvalidColorException.h"
 
 int Couleur::cpt = 0;
 const Couleur Couleur::ROUGE(255, 0, 0, "Rouge");
@@ -17,6 +18,7 @@ const Couleur Couleur::BLEU(0, 0, 255, "Bleu");
 Couleur::Couleur()//default
 {
 	cout << "Default constuctor Couleur" << endl;
+	
 	name = NULL;
 	setRouge(0);
 	setVert(0);
@@ -55,6 +57,7 @@ Couleur::Couleur(const int red, const int green, const int blue, const char * no
 Couleur::Couleur(const Couleur &obj)//copy
 {
 	cout << "Copy constuctor Couleur" << endl;
+	
 	name = NULL;
 	setRouge(obj.getRouge());
 	setVert(obj.getVert());
@@ -457,7 +460,7 @@ void Couleur::invalidColor(int r, int g, int b)
 	else
 		Green = true;
 
-	if(b < 0 || b() > 255)
+	if(b < 0 || b > 255)
 	{
 		Blue = false;
 		flag = true;
@@ -466,9 +469,9 @@ void Couleur::invalidColor(int r, int g, int b)
 		Blue = true;
 		
 	if(flag)
-		throw InvalidColorException("Invalid Color!"Red, Green, Blue);
+		throw InvalidColorException("Invalid Color!", Red, Green, Blue);
 	else
-		return 1;
+		return;
 }
 
 

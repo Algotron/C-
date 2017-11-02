@@ -25,7 +25,7 @@ class Couleur
 	char * name;
 	static int cpt;
 	
-	void invalidColor(const char *, int, int, int);
+	void invalidColor(int, int, int);
 	
 	public:
 	Couleur();//default

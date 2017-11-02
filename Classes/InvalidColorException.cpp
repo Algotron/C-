@@ -7,14 +7,14 @@
 
 using namespace std;
 
-#include "InvalidColorException"
+#include "InvalidColorException.h"
 
 InvalidColorException::InvalidColorException():BaseException()//default
 {
 
 }
 
-InvalidColorException::InvalidColorException(char * M, bool r, bool g, bool b):BaseException(M)//initialisation
+InvalidColorException::InvalidColorException(const char * M, bool r, bool g, bool b):BaseException(M)//initialisation
 {
 	setRed(r);
 	setGreen(g);
@@ -38,22 +38,22 @@ bool InvalidColorException::vertValide() const
 	return Green;
 }
 
-bool ::InvalidColorException::bleuValide() const
+bool InvalidColorException::bleuValide() const
 {
 	return Blue;
 }
 
-void setRed(bool R)
+void InvalidColorException::setRed(bool R)
 {
 	Red = R;
 }
 
-void setGreen(bool G)
+void InvalidColorException::setGreen(bool G)
 {
 	Green = G;
 }
 
-void setBlue(bool B)
+void InvalidColorException::setBlue(bool B)
 {
 	Blue = B;
 }
