@@ -61,20 +61,10 @@ int Menu()
   return ch;
 }
 
-//**********************************************************************************************
-// ATTENTION !!!!
-// Les methodes de vos classes NE doivent PAS contenir de TRY{...} CATCH{...} mais
-// uniquement des THROW !!! Donc, votre classe lance une exception (une erreur) mais
-// ce n'est pas elle qui la traite. C'est l'application qui utilise votre classe
-// qui doit traiter les exceptions. C'est donc uniquement dans le main (ou les fonctions appelees)
-// que l'on trouve des try...catch 
-//**********************************************************************************************
 void Essai1()
 {
 
   cout << "----- 1. Test de setId() de Pixel, Ligne et Rectangle -------------------------------" << endl;
-  // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
-  // en particulier : afficher le message de l'exception lancee
 
 	try
 	{
@@ -97,13 +87,13 @@ void Essai1()
 
 		char txt[80];
 		cout << "Encodez son identifiant : "; cin.getline(txt,80);
-		pf->setId(txt);  // !!!
+		pf->setId(txt);
 		cout << "Identifiant encode = " << pf->getId() << endl << endl;
 	}
 	
 	catch(BaseException obj)
 	{
-		cout << obj.what() << endl;
+		cout << "ERROR : " << obj.what() << endl;
 		
 	}
 	catch(...)
@@ -119,8 +109,6 @@ void Essai2()
 {
 
   cout << "----- 2. Test des constructeurs de Pixel, Ligne et Rectangle ------------------------" << endl;
-  // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
-  // en particulier : afficher le message de l'exception lancee
 
 	try
 	{
@@ -145,7 +133,7 @@ void Essai2()
 	}
 	catch (BaseException obj)
 	{
-	cout << obj.what() << endl;
+		cout << "ERROR : " << obj.what() << endl;
 	}
 	catch(...)
 	{
@@ -160,8 +148,6 @@ void Essai3()
 {
 
   cout << "----- 3. Test des setXXX() de la classe Couleur ------------------------------------" << endl;
-  // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
-  // en particulier : afficher le message de l'exception lancee ET la (les) composante(s) invalide(s)
 
 	try 
 	{
@@ -177,11 +163,11 @@ void Essai3()
     }
 	catch(InvalidColorException obj)
 	{
-	
+		cout << "\nERROR : " << obj.what() << "\nRed Valid :\t" << obj.rougeValide() << "\nGreen Valid :\t" << obj.vertValide() << "\nBlue Valid:\t" << obj.bleuValide() << 			endl;
 	}
   	catch(...)
   	{
-  	
+		cout << "Unknown error occured" << endl;
   	}
   cout << endl;
 }
@@ -191,8 +177,6 @@ void Essai4()
 {
 
   cout << "----- 4. Test des constructeurs de la classe Couleur -------------------------------" << endl;
-  // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
-  // en particulier : afficher le message de l'exception lancee ET la (les) composante(s) invalide(s)
 
 	try
 	{
@@ -208,11 +192,11 @@ void Essai4()
 	}	
 	catch(InvalidColorException obj)
 	{
-
+		cout << "\nERROR : " << obj.what() << "\nRed Valid :\t" << obj.rougeValide() << "\nGreen Valid :\t" << obj.vertValide() << "\nBlue Valid:\t" << obj.bleuValide() << 			endl;
 	}
 	catch(...)
 	{
-	
+		cout << "Unknown error occured" << endl;
 	}
 
   cout << endl;
@@ -222,7 +206,6 @@ void Essai4()
 void Essai5()
 {
   cout << "----- 5. Gestion de plusieurs exceptions simultanement ------------------------------" << endl;
-  // A COMPLETER : Traitez TOUTES les exceptions susceptible d'etre lancee par le bloc de code suivant (try...catch)
 
 	try
   	{
@@ -240,15 +223,15 @@ void Essai5()
 	}
 	catch(InvalidColorException obj)
 	{
-	
+		cout << "\nERROR : " << obj.what() << "\nRed Valid :\t" << obj.rougeValide() << "\nGreen Valid :\t" << obj.vertValide() << "\nBlue Valid:\t" << obj.bleuValide() << 			endl;
 	}
 	catch(BaseException E)
 	{
-	
+		cout << "ERROR : " << E.what() << endl;
 	}
 	catch(...)
 	{
-	
+		cout << "Unknown error occured" << endl;
 	}
 
   cout << endl;
