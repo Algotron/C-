@@ -69,7 +69,7 @@ const char * Ligne::getInfos()
 	if(infos)
 		delete infos;
 	
-	infos = new char[strlen(chaine)];		
+	infos = new char[strlen(chaine) + 1];		
 	
 	return infos;
 	
