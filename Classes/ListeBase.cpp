@@ -38,7 +38,7 @@ ListeBase<T>::ListeBase(const ListeBase<T> &obj)//copy
 template<class T>
 bool ListeBase<T>::estVide() const;
 {
-	return pTete == NULL;
+	return pTete ==  NULL;
 }
 
 template<class T>
