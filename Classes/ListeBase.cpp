@@ -22,7 +22,7 @@ ListeBase<T>::ListeBase(const ListeBase<T> &obj)//copy
 		return;
 		
 	Cellule<T> * current = pTete = new Cellule<T>;    
-	Cellule<T> * original = obj.pTete.
+	Cellule<T> * original = obj.pTete;
 	
 	current->valeur = original->valeur;
 	
@@ -35,14 +35,14 @@ ListeBase<T>::ListeBase(const ListeBase<T> &obj)//copy
 	}
 }
 
-template<class T>
-bool ListeBase<T>::estVide() const;
+template<class T> 
+bool ListeBase<T>::estVide() const
 {
 	return pTete ==  NULL;
 }
 
 template<class T>
-int ListeBase<T>::getNombreElements() const;
+int ListeBase<T>::getNombreElements() const
 {
 	int i = 0;
 	
@@ -53,7 +53,7 @@ int ListeBase<T>::getNombreElements() const;
 		while(current != NULL)
 		{
 			i++;
-			current = current->suivant
+			current = current->suivant;
 	
 		}
 	}
@@ -73,7 +73,7 @@ void ListeBase<T>::Affiche() const
 		{
 			i++;
 			cout <<"Element [" << i << "] : " << current->valeur << endl;  
-			current = current->suivant
+			current = current->suivant;
 	
 		}
 	}
@@ -81,20 +81,15 @@ void ListeBase<T>::Affiche() const
 		cout << "Empty list" << endl;
 }
 
-template<class T>
-T* ListeBase<T>::insere(const T &obj)
-{
-	
-}
 
 template<class T>
-ListeBase& operator= (const ListeBase &obj)
+ListeBase<T>& ListeBase<T>::operator= (const ListeBase<T> &obj)
 {
 	if(pTete)
 		~ListeBase();
 		
 	Cellule<T> * current = pTete = new Cellule<T>;    
-	Cellule<T> * original = obj.pTete.
+	Cellule<T> * original = obj.pTete;
 	
 	current->valeur = original->valeur;
 	
@@ -120,7 +115,7 @@ ListeBase<T>::~ListeBase()
 		while(current != NULL)
 		{
 			previous = current;  
-			current = current->suivant
+			current = current->suivant;
 			delete previous;
 		}
 	}

@@ -2,7 +2,7 @@
 #define LISTE_BASE_H
 
 template<class T> 
-class struct Cellule
+struct Cellule
 {
 	T valeur;
 	Cellule<T> *suivant;
@@ -16,15 +16,16 @@ class ListeBase
 	
 	public: 
 	ListeBase();
-	ListeBase(ListeBase &);
+	ListeBase(const ListeBase<T> &);
 	
 	bool estVide() const;
 	int getNombreElements() const;
 	void Affiche() const;
 	virtual T* insere(const T &) = 0;
-	ListeBase& operator= (const ListeBase &);
+	ListeBase& operator= (const ListeBase<T> &);
+	
+	~ListeBase();
 };
-
 
 
 #endif

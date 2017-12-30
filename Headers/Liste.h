@@ -4,18 +4,16 @@
 #include "ListeBase.h"
 
 template<class T>
-class Liste : public ListeBase
+class Liste : public ListeBase<T>
 {
-	protected:
+	private:
 
 	
 	public: 
 	Liste();
-	Liste(Liste &);
+	Liste(Liste<T> &);
 
 	T* insere(const T &);
 };
-
-
 
 #endif

@@ -26,7 +26,7 @@ T* insere(const T &value)
 	Cellule<T> * current = pTete;
 	Cellule<T> * previous = NULL;
 	
-	while(current != NULL || value > current->valeur)
+	while(current != NULL && value > current->valeur)
 	{
 		previous = current;
 		current = current->suivant;

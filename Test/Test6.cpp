@@ -125,7 +125,7 @@ void Essai1()
 
 //*********************************************************************************************
 void Essai2()
-{
+{/*
   cout << "----- 2. Test du template Liste avec des objets de la classe Couleur --------------" << endl;
   cout << "Creation  d'une Liste..." << endl;
   Liste<Couleur> liste;
@@ -151,7 +151,7 @@ void Essai2()
   pC->setRouge(255);
   liste.Affiche();
 
-  cout << endl;
+  cout << endl;*/
 }
 
 //*******************************************************************************************************
@@ -206,7 +206,7 @@ void Essai3()
 
 //*******************************************************************************************************
 void Essai4()
-{
+{/*
   cout << "----- 4. Test du template ListeTriee avec des objets de la classe Couleur -------------------" << endl;
   cout << "Creation  d'une Liste triee..." << endl;
   ListeTriee<Couleur> liste;
@@ -221,12 +221,12 @@ void Essai4()
   liste.insere(Couleur(0,0,0));
   liste.Affiche();
   cout << "La liste contient " << liste.getNombreElements() << " elements." << endl;
-  cout << endl;
+  cout << endl;*/
 }
 
 //*******************************************************************************************************
 void Essai5()
-{
+{/*
   cout << "----- 5. Test de l'iterateur avec une Liste d'entiers ------------------------" << endl;
   cout << "Creation  d'une Liste..." << endl;
   Liste<int> liste;
@@ -259,12 +259,12 @@ void Essai5()
   cout << "Valeur retiree = " << valeurRetiree << endl;
   cout << "On re-affiche la liste..." << endl;
   liste.Affiche();
-  cout << endl;
+  cout << endl;*/
 }
 
 //*******************************************************************************************************
 void Essai6()
-{
+{/*
   cout << "----- 6. Test de l'iterateur avec une Liste de Couleur --------------------------------------" << endl;
   cout << "Creation  d'une Liste..." << endl;
   Liste<Couleur> liste;
@@ -295,12 +295,12 @@ void Essai6()
   cout << "Valeur retiree = " << valeurRetiree << endl;
   cout << "On re-affiche la liste..." << endl;
   liste.Affiche();
-  cout << endl;
+  cout << endl;*/
 }
 
 //*******************************************************************************************************
 void Essai7()
-{
+{/*
   cout << "----- 7. Test de l'iterateur avec une Liste triee d'entiers ------------------------" << endl;
   cout << "Creation  d'une ListeTriee..." << endl;
   ListeTriee<int> liste;
@@ -325,12 +325,12 @@ void Essai7()
   cout << "Valeur retiree = " << valeurRetiree << endl;
   cout << "On re-affiche la liste..." << endl;
   liste.Affiche();
-  cout << endl;
+  cout << endl;*/
 }
 
 //*******************************************************************************************************
 void Essai8()
-{
+{/*
   cout << "----- 8. Test de l'iterateur avec une Liste triee de Couleurs -------------------------------" << endl;
   cout << "Creation  d'une ListeTriee..." << endl;
   ListeTriee<Couleur> liste;
@@ -355,6 +355,6 @@ void Essai8()
   cout << "Valeur retiree = " << valeurRetiree << endl;
   cout << "On re-affiche la liste..." << endl;
   liste.Affiche();
-  cout << endl;
+  cout << endl;*/
 }
 

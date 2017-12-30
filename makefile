@@ -9,17 +9,15 @@ FORME = Forme1-3/
 
 .SILENT:
 
-ALL : Test1 Test2 Test3 Test4 Test5
+ALL : Test1 Test2 Test3 Test4 Test5 Test6
 
-Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
+Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o
 		echo Creation Test6
-		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o -o $(EXECUTABLES)Test5 $(HEAD)
+		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o -o $(EXECUTABLES)Test5 $(HEAD)
 
 Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
 		echo Creation Test5
 		$(COMPIL) $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o -o $(EXECUTABLES)Test5 $(HEAD)
-
-
 
 Test4: $(TEST)4.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
 		echo Creation Test4
@@ -45,7 +43,17 @@ Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o $(OBJECTS)InvalidColorException.o $(OBJE
 
 
 
-
+$(OBJECTS)ListeBase.o: $(CLASSES)ListeBase.cpp $(HEADERS)ListeBase.h
+		echo creation ListeBase.o
+		$(COMPIL) $(CLASSES)ListeBase.cpp -c $(HEAD) -o $(OBJECTS)ListeBase.o
+		
+$(OBJECTS)Liste.o: $(CLASSES)Liste.cpp $(HEADERS)Liste.h
+		echo creation Liste.o
+		$(COMPIL) $(CLASSES)Liste.cpp -c $(HEAD) -o $(OBJECTS)Liste.o
+		
+$(OBJECTS)ListeTriee.o: $(CLASSES)ListeTriee.cpp $(HEADERS)ListeTriee.h
+		echo creation ListeTriee.o
+		$(COMPIL) $(CLASSES)ListeTriee.cpp -c $(HEAD) -o $(OBJECTS)ListeTriee.o
 
 $(OBJECTS)InvalidColorException.o: $(CLASSES)InvalidColorException.cpp $(HEADERS)InvalidColorException.h
 		echo creation InvalidColorException.o
