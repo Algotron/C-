@@ -1,10 +1,14 @@
+#include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include <iostream>
+#include <math.h>
 #include <time.h>
 
 #include "Liste.h"
 #include "ListeTriee.h"
-#include "Iterateur.h"
+//#include "Iterateur.h"
 
 #include "Couleur.h"
 
@@ -71,7 +75,8 @@ int Menu()
 
 //*******************************************************************************************************
 void Essai1()
-{
+{ 
+	
   cout << "----- 1. Test du template Liste avec des entiers --------------------------------------------" << endl;
   cout << "----- 1.1 Creation et gestion d'une Liste ---------------------------------------------------" << endl;
 
@@ -86,8 +91,9 @@ void Essai1()
   int *pI = liste.insere(5);
   liste.insere(-1);
   liste.insere(0);
+
   cout << "Liste Vide ? " << liste.estVide() << endl;
-  liste.Affiche();                                       // --> (3 -2 5 -1 0)
+  liste.Affiche();  
   cout << "La liste contient " << liste.getNombreElements() << " elements." << endl;
   cout << "On modifie le 3eme element :" << endl;
   *pI = 100;
@@ -108,7 +114,7 @@ void Essai1()
   cout << endl;
 
   cout << "----- 1.3 Test de l'operateur = -------------------------------------------------------------" << endl;
-  {
+  { 
     Liste<int> liste3;
     liste3 = liste;
     cout << "----> Voici le resultat de l'operateur = :" << endl;

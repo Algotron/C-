@@ -13,7 +13,7 @@ ALL : Test1 Test2 Test3 Test4 Test5 Test6
 
 Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o
 		echo Creation Test6
-		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o -o $(EXECUTABLES)Test5 $(HEAD)
+		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o -o $(EXECUTABLES)Test6 $(HEAD)
 
 Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
 		echo Creation Test5

@@ -1,7 +1,7 @@
 #ifndef COULEUR_H
 #define COULEUR_H
 
-
+using namespace std;
 
 class Couleur
 {

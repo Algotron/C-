@@ -10,33 +10,45 @@ using namespace std;
 #include "Liste.h"
 
 template<class T>
-Liste<T>::Liste():ListeBase()//default
-{
-
-}
-
-Liste<T>::Liste(const Liste<T> &obj):ListeBase(obj)//copy
+Liste<T>::Liste():ListeBase<T>::ListeBase()//default
 {
 
 }
 
 template<class T>
-T* insere(const T &value)
+Liste<T>::Liste(const Liste<T> &obj):ListeBase<T>::ListeBase(obj)//copy
 {
-	Cellule<T> * current = pTete;
-	Cellule<T> * previous = NULL;
+
+}
+
+template<class T>
+T* Liste<T>::insere(const T &value)
+{
+	if(this->pTete == NULL)//if list is empty
+	{
+		this->pTete = new Cellule<T>;
+		this->pTete->valeur = value;
+		this->pTete->suivant = NULL;
+		
+		return &(this->pTete->valeur);
+	}
 	
+	Cellule<T> * current = this->pTete;
+	Cellule<T> * previous = NULL;
+
 	while(current != NULL)
 	{
 		previous = current;
 		current = current->suivant;
 	}
-	
+
 	current = new Cellule<T>;
-	
 	current->valeur = value;
+	current->suivant = NULL;
 	previous->suivant = current;
 	
-	return current->valeur;
+	return &(current->valeur);
 }
 
+template class Liste<int>;
+//template class Liste<Couleur>;

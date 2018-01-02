@@ -4,14 +4,14 @@
 #include "ListeBase.h"
 
 template<class T>
-class ListeTriee : public ListeBase
+class ListeTriee : public ListeBase<T>
 {
 	private:
 
 	
 	public: 
 	ListeTriee();
-	ListeTriee(ListeTriee &);
+	ListeTriee(const ListeTriee<T> &);
 
 	T* insere(const T &);
 };

@@ -10,20 +10,30 @@ using namespace std;
 #include "ListeTriee.h"
 
 template<class T>
-ListeTriee<T>::ListeTriee():ListeBase()//default
-{
-
-}
-
-ListeTriee<T>::ListeTriee(const ListeTriee<T> &obj):ListeBase(obj)//copy
+ListeTriee<T>::ListeTriee():ListeBase<T>::ListeBase()//default
 {
 
 }
 
 template<class T>
-T* insere(const T &value)
+ListeTriee<T>::ListeTriee(const ListeTriee<T> &obj):ListeBase<T>::ListeBase(obj)//copy
 {
-	Cellule<T> * current = pTete;
+
+}
+
+template<class T>
+T* ListeTriee<T>::insere(const T &value)
+{
+	if(this->pTete == NULL)//if list is empty
+	{
+		this->pTete = new Cellule<T>;
+		this->pTete->valeur = value;
+		this->pTete->suivant = NULL;
+		
+		return &(this->pTete->valeur);
+	}
+	
+	Cellule<T> * current = this->pTete;
 	Cellule<T> * previous = NULL;
 	
 	while(current != NULL && value > current->valeur)
@@ -32,20 +42,27 @@ T* insere(const T &value)
 		current = current->suivant;
 	}
 	
-	if(current == NULL)
+	if(current == NULL)//if value > last of list
 	{
+		current = new Cellule<T>;
 		current->valeur = value;
+		current->suivant = NULL;
 		previous->suivant = current;
 	}
-	else
+	else//if first of list < value < last of list
 	{
-		Cellule<T> * insertion;
-		insertion = new Cellule<T>;
+		Cellule<T> * insertion = new Cellule<T>;
 		insertion->valeur = value;
-		previous->suivant = insertion;
 		insertion->suivant = current;
+		
+		if(previous)
+			previous->suivant = insertion;
+		else
+			this->pTete = insertion;//if value < first of list
 	}
 	
-	return current->valeur;
+	return &(current->valeur);
 }
 
+template class ListeTriee<int>;
+//template class ListeTriee<Couleur>;

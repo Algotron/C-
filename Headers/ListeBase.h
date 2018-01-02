@@ -1,6 +1,8 @@
 #ifndef LISTE_BASE_H
 #define LISTE_BASE_H
 
+#include "Couleur.h"
+
 template<class T> 
 struct Cellule
 {

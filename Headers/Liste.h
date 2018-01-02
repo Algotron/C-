@@ -11,7 +11,7 @@ class Liste : public ListeBase<T>
 	
 	public: 
 	Liste();
-	Liste(Liste<T> &);
+	Liste(const Liste<T> &);
 
 	T* insere(const T &);
 };
