@@ -12,12 +12,20 @@ using namespace std;
 template<class T>
 ListeBase<T>::ListeBase()//default
 {
+	#ifdef DEBUG
+	cout << "Default constuctor ListeBase" << endl;
+	#endif
+	
 	pTete = NULL;
 }
 
 template<class T>
 ListeBase<T>::ListeBase(const ListeBase<T> &obj)//copy
 {
+	#ifdef DEBUG
+	cout << "Copy constuctor ListeBase" << endl;
+	#endif
+
 	if(!obj.pTete)
 		return;
 		
@@ -127,4 +135,4 @@ ListeBase<T>::~ListeBase()
 }
 
 template class ListeBase<int>;
-//template class ListeBase<Couleur>;
+template class ListeBase<Couleur>;

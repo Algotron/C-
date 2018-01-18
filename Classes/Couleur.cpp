@@ -17,7 +17,9 @@ const Couleur Couleur::BLEU(0, 0, 255, "Bleu");
 
 Couleur::Couleur()//default
 {
+	#ifdef DEBUG
 	cout << "Default constuctor Couleur" << endl;
+	#endif
 	
 	name = NULL;
 	setRouge(0);
@@ -28,7 +30,9 @@ Couleur::Couleur()//default
 }
 Couleur::Couleur(const int red, const int green, const int blue)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Partial initialisation constuctor Couleur" << endl;
+	#endif
 	
 	invalidColor(red, green, blue);
 	
@@ -42,7 +46,9 @@ Couleur::Couleur(const int red, const int green, const int blue)//initialisation
 
 Couleur::Couleur(const int red, const int green, const int blue, const char * nom)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Initialisation constuctor Couleur" << endl;
+	#endif
 	
 	invalidColor(red, green, blue);
 	
@@ -56,7 +62,9 @@ Couleur::Couleur(const int red, const int green, const int blue, const char * no
 
 Couleur::Couleur(const Couleur &obj)//copy
 {
+	#ifdef DEBUG
 	cout << "Copy constuctor Couleur" << endl;
+	#endif
 	
 	name = NULL;
 	setRouge(obj.getRouge());
@@ -342,7 +350,6 @@ int operator< (const Couleur& obj,const Couleur& obj2)
 		return 1;
 	else 
 		return 0;
-	
 }
 
 int operator> (const Couleur& obj,const Couleur& obj2)
@@ -360,7 +367,6 @@ int operator== (const Couleur& obj,const Couleur& obj2)
 		return 1;
 	else 
 		return 0;
-	
 }
 
 ostream& operator<< (ostream& os, const Couleur& obj)

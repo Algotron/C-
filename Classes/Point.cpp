@@ -13,7 +13,10 @@ int Point::cpt = 0;
 
 Point::Point()//default
 {
+	#ifdef DEBUG
 	cout << "Default constuctor Point" << endl;
+	#endif
+	
 	setX(0);
 	setY(0);
 	cpt++;
@@ -21,7 +24,10 @@ Point::Point()//default
 
 Point::Point(const int X, const int Y)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Initialisation constuctor Point" << endl;
+	#endif
+	
 	setX(X);
 	setY(Y);
 	cpt++;
@@ -29,7 +35,10 @@ Point::Point(const int X, const int Y)//initialisation
 
 Point::Point(const Point &obj)//copy
 {
+	#ifdef DEBUG
 	cout << "Copy constuctor Point" << endl;
+	#endif
+	
 	setX(obj.getX());
 	setY(obj.getY());
 	cpt++;

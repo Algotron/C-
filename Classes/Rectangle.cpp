@@ -12,7 +12,9 @@ using namespace std;
 
 Rectangle::Rectangle():Forme()//default
 {
+	#ifdef DEBUG
 	cout << "Default constuctor Rectangle" << endl;
+	#endif
 	
 	id = NULL;
 	setDimX(1);
@@ -22,7 +24,9 @@ Rectangle::Rectangle():Forme()//default
 
 Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, bool filled, const Couleur * objCouleur, const int depth):Forme(objPoint, objCouleur, depth)//initialisation)
 {
+	#ifdef DEBUG
 	cout << "Initialisation constuctor Rectangle" << endl;
+	#endif
 	
 	id = NULL;
 	setId(ID);
@@ -33,7 +37,9 @@ Rectangle::Rectangle(const char * ID, const Point &objPoint,int xDim, int yDim, 
 
 Rectangle::Rectangle(const Rectangle &obj):Forme(obj)//copy
 {
+	#ifdef DEBUG
 	cout << "Copy constuctor Rectangle" << endl;
+	#endif
 	
 	id = NULL;
 	setId(obj.getId());

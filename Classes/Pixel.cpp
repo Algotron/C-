@@ -13,20 +13,28 @@ using namespace std;
 
 Pixel::Pixel():Forme()//default
 {
+	#ifdef DEBUG
 	cout << "Default constuctor Pixel" << endl;
+	#endif
+
 	id = NULL;
 }
 
 Pixel::Pixel(const char * ID, const Point &obj):Forme(obj)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Partial initialisation constuctor Pixel" << endl;
+	#endif
+	
 	id = NULL;
 	setId(ID);
 }
 
 Pixel::Pixel(const char * ID,const Point &objPoint, const Couleur * objCouleur, const int depth):Forme(objPoint, objCouleur, depth)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Initialisation constuctor Rectangle" << endl;
+	#endif
 	
 	id = NULL;
 	setId(ID);
@@ -34,7 +42,9 @@ Pixel::Pixel(const char * ID,const Point &objPoint, const Couleur * objCouleur, 
 
 Pixel::Pixel(Pixel &obj):Forme(obj)//copy
 {
+	#ifdef DEBUG
 	cout << "Copy constuctor Rectangle" << endl;
+	#endif
 		
 	id = NULL;
 	setId(obj.getId());

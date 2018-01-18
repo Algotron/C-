@@ -11,9 +11,9 @@ FORME = Forme1-3/
 
 ALL : Test1 Test2 Test3 Test4 Test5 Test6
 
-Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o
+Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o
 		echo Creation Test6
-		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o -o $(EXECUTABLES)Test6 $(HEAD)
+		$(COMPIL) $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o -o $(EXECUTABLES)Test6 $(HEAD)
 
 Test5: $(TEST)5.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o  $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o
 		echo Creation Test5
@@ -43,6 +43,13 @@ Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o $(OBJECTS)InvalidColorException.o $(OBJE
 
 
 
+
+
+
+$(OBJECTS)Iterateur.o: $(CLASSES)Iterateur.cpp $(HEADERS)Iterateur.h
+		echo creation Iterateur.o
+		$(COMPIL) $(CLASSES)Iterateur.cpp -c $(HEAD) -o $(OBJECTS)Iterateur.o
+		
 $(OBJECTS)ListeBase.o: $(CLASSES)ListeBase.cpp $(HEADERS)ListeBase.h
 		echo creation ListeBase.o
 		$(COMPIL) $(CLASSES)ListeBase.cpp -c $(HEAD) -o $(OBJECTS)ListeBase.o

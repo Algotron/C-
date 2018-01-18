@@ -12,13 +12,17 @@ using namespace std;
 template<class T>
 ListeTriee<T>::ListeTriee():ListeBase<T>::ListeBase()//default
 {
-
+	#ifdef DEBUG
+	cout << "Default constuctor ListeTriee" << endl;
+	#endif
 }
 
 template<class T>
 ListeTriee<T>::ListeTriee(const ListeTriee<T> &obj):ListeBase<T>::ListeBase(obj)//copy
 {
-
+	#ifdef DEBUG
+	cout << "Copy constuctor ListeTriee" << endl;
+	#endif
 }
 
 template<class T>
@@ -65,4 +69,4 @@ T* ListeTriee<T>::insere(const T &value)
 }
 
 template class ListeTriee<int>;
-//template class ListeTriee<Couleur>;
+template class ListeTriee<Couleur>;

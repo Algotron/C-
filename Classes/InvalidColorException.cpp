@@ -11,11 +11,17 @@ using namespace std;
 
 InvalidColorException::InvalidColorException():BaseException()//default
 {
-
+	#ifdef DEBUG
+	cout << "Default constuctor InvalidColorException" << endl;
+	#endif
 }
 
 InvalidColorException::InvalidColorException(const char * M, bool r, bool g, bool b):BaseException(M)//initialisation
 {
+	#ifdef DEBUG
+	cout << "Initialisation constuctor InvalidColorException" << endl;
+	#endif
+
 	setRed(r);
 	setGreen(g);
 	setBlue(b);
@@ -23,6 +29,10 @@ InvalidColorException::InvalidColorException(const char * M, bool r, bool g, boo
 
 InvalidColorException::InvalidColorException(const InvalidColorException &obj):BaseException(obj)//copy
 {
+	#ifdef DEBUG
+	cout << "Copy constuctor InvalidColorException" << endl;
+	#endif
+
 	setRed(obj.rougeValide());
 	setGreen(obj.vertValide());
 	setBlue(obj.bleuValide());

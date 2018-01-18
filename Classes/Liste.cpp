@@ -12,13 +12,17 @@ using namespace std;
 template<class T>
 Liste<T>::Liste():ListeBase<T>::ListeBase()//default
 {
-
+	#ifdef DEBUG
+	cout << "Default constuctor Liste" << endl;
+	#endif
 }
 
 template<class T>
 Liste<T>::Liste(const Liste<T> &obj):ListeBase<T>::ListeBase(obj)//copy
 {
-
+	#ifdef DEBUG
+	cout << "Copy constuctor Liste" << endl;
+	#endif
 }
 
 template<class T>
@@ -51,4 +55,4 @@ T* Liste<T>::insere(const T &value)
 }
 
 template class Liste<int>;
-//template class Liste<Couleur>;
+template class Liste<Couleur>;

@@ -2,6 +2,9 @@
 #define LISTE_BASE_H
 
 #include "Couleur.h"
+#include "Iterateur.h"
+
+template <class T> class Iterateur;
 
 template<class T> 
 struct Cellule
@@ -27,6 +30,9 @@ class ListeBase
 	ListeBase& operator= (const ListeBase<T> &);
 	
 	~ListeBase();
+	
+	friend class Iterateur<T>;
+	
 };
 
 

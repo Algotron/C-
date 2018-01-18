@@ -13,7 +13,10 @@ int Forme::cpt = 0;
 
 Forme::Forme()//default
 {
+	#ifdef DEBUG
 	cout << "Default constuctor Forme" << endl;
+	#endif
+	
 	infos = NULL;
 	position.setX(0);
 	position.setY(0);
@@ -24,7 +27,10 @@ Forme::Forme()//default
 
 Forme::Forme(const Point &obj)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Partial initialisation constuctor Forme" << endl;
+	#endif
+	
 	infos = NULL;
 	setPosition(obj);
 	setProfondeur(0);
@@ -34,7 +40,10 @@ Forme::Forme(const Point &obj)//initialisation
 
 Forme::Forme(const Point &objPoint, const Couleur * objCouleur, const int depth)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Initialisation constuctor Forme" << endl;
+	#endif
+	
 	infos = NULL;
 	setPosition(objPoint);
 	setCouleur(objCouleur);
@@ -44,7 +53,10 @@ Forme::Forme(const Point &objPoint, const Couleur * objCouleur, const int depth)
 
 Forme::Forme(const Forme &obj)//copy
 {
+	#ifdef DEBUG
 	cout << "Copy constuctor Forme" << endl;
+	#endif
+	
 	infos = NULL;
 	setPosition(obj.getPosition());
 	setCouleur(obj.getCouleur());

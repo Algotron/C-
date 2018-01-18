@@ -13,7 +13,9 @@ using namespace std;
 
 Ligne::Ligne():Forme()//default
 {
+	#ifdef DEBUG
 	cout << "Default constuctor Ligne" << endl;
+	#endif
 	
 	id = NULL;
 	extremite.setX(0);
@@ -22,7 +24,9 @@ Ligne::Ligne():Forme()//default
 
 Ligne::Ligne(const char * ID, const Point &objPoint,const Point &objExtremite, const Couleur * objCouleur, const int depth):Forme(objPoint, objCouleur, depth)//initialisation
 {
+	#ifdef DEBUG
 	cout << "Initialisation constuctor Ligne" << endl;
+	#endif
 	
 	id = NULL;
 	setId(ID);
@@ -31,7 +35,9 @@ Ligne::Ligne(const char * ID, const Point &objPoint,const Point &objExtremite, c
 
 Ligne::Ligne(const Ligne &obj):Forme(obj)//copy
 {
+	#ifdef DEBUG
 	cout << "Copy constuctor Ligne" << endl;
+	#endif
 	
 	id = NULL;
 	setId(obj.getId());
