@@ -48,6 +48,7 @@ int Menu()
   cout << "  Choix : ";
   cin >> ch; // Faites pas le biess !
   cin.ignore();
+  printf("\033c");
   return ch;
 }
 
@@ -61,12 +62,12 @@ void Essai1()  // Attention : utilisez les flux bytes (read et write) !!!!
   cout << endl;
 
   cout << "----- Sauvegarde du point dans le fichier P.dat -----" << endl;
-  ofstream fichier1("P.dat",ios::out);
+  ofstream fichier1("P.dat",ios::out | ios::binary);
   p1.Save(fichier1);
   fichier1.close();
 
   cout << "----- Chargement du point situe dans le fichier P.dat -----" << endl;
-  ifstream fichier2("P.dat",ios::in);
+  ifstream fichier2("P.dat",ios::in | ios::binary);
   Point p2;
   p2.Load(fichier2);
   fichier2.close();
@@ -84,12 +85,12 @@ void Essai2()  // Attention : utilisez les flux bytes (read et write) !!!!
   cout << endl;
 
   cout << "----- Sauvegarde de la couleur dans le fichier C.dat -----" << endl;
-  ofstream fichier1("C.dat",ios::out);
+  ofstream fichier1("C.dat",ios::out | ios::binary);
   c1.Save(fichier1);
   fichier1.close();
 
   cout << "----- Chargement de la couleur situee dans le fichier C.dat -----" << endl;
-  ifstream fichier2("C.dat",ios::in);
+  ifstream fichier2("C.dat",ios::in | ios::binary);
   Couleur c2;
   c2.Load(fichier2);
   fichier2.close();
@@ -107,14 +108,14 @@ void Essai3()  // Attention : utilisez les flux bytes (read et write) !!!!
   l1.Affiche();
 
   cout << "----- Sauvegarde de la ligne dans le fichier L.dat -----" << endl;
-  ofstream fichier1("L.dat",ios::out);
+  ofstream fichier1("L.dat",ios::out | ios::binary);
   l1.Save(fichier1);
   // Attention ! A terme, la classe Ligne ne devra pas enregistrer l'objet Couleur sur disque, 
   // mais bien son nom (identifiant unique de la couleur dans l'application finale)
   fichier1.close();
 
   cout << "----- Chargement de la ligne situee dans le fichier L.dat -----" << endl;
-  ifstream fichier2("L.dat",ios::in);
+  ifstream fichier2("L.dat",ios::in | ios::binary);
   Ligne l2;
   l2.Load(fichier2);
   fichier2.close();

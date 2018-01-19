@@ -4,6 +4,8 @@
 #include <string.h>
 #include <iostream>
 #include <math.h>
+#include <fstream>
+
 
 using namespace std;
 
@@ -115,7 +117,19 @@ void Ligne::setId(const char * ID)
 	strcpy(id, ID);
 }
 
+void Ligne::Save(ofstream & file) const
+{	
+	extremite.Save(file);
+	Forme::Save(file);
 
+}
+
+void Ligne::Load(ifstream & file)
+{
+	extremite.Load(file);
+	Forme::Load(file);
+
+}
 
 Ligne::~Ligne()
 {

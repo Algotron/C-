@@ -61,6 +61,8 @@ class Couleur
 	Couleur& operator-- ();
 	Couleur operator-- (int);
 
+	void Save(ofstream &) const;
+	void Load(ifstream &);
 	
 	~Couleur();
 	

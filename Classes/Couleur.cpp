@@ -4,6 +4,8 @@
 #include <string.h>
 #include <iostream>
 #include <math.h>
+#include <fstream>
+
 
 using namespace std;
 
@@ -480,6 +482,45 @@ void Couleur::invalidColor(int r, int g, int b)
 		return;
 }
 
+void Couleur::Save(ofstream & file) const
+{
+	int size;
+	
+	file.write((char*)&R, sizeof(int));
+	file.write((char*)&G, sizeof(int));
+	file.write((char*)&B, sizeof(int));
+
+	if (name)
+	{
+		size = strlen(name) + 1;
+		
+		file.write((char*)&size, sizeof(int));
+		file.write(name, size);
+	}
+	else
+		file.write("0", sizeof(int));
+}
+
+void Couleur::Load(ifstream & file)
+{
+	int size;
+	
+	file.read((char*)&R, sizeof(int));
+	file.read((char*)&G, sizeof(int));
+	file.read((char*)&B, sizeof(int));
+	file.read((char*)&size, sizeof(int));
+	
+	if(name)
+		delete name;
+	
+	if(size)
+	{
+		name = new char[size];
+		file.read(name, size);
+	}
+	else
+		setNom(NULL);
+}
 
 Couleur::~Couleur()
 {

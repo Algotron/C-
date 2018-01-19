@@ -29,7 +29,7 @@ class ListeBase
 	virtual T* insere(const T &) = 0;
 	ListeBase& operator= (const ListeBase<T> &);
 	
-	~ListeBase();
+	virtual ~ListeBase();
 	
 	friend class Iterateur<T>;
 	

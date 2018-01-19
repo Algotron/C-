@@ -27,6 +27,8 @@ class Point
 	
 	static int getCompteur() ;
 	
+	void Save(ofstream &) const;
+	void Load(ifstream &);
 	
 	~Point();
 	

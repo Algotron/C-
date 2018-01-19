@@ -24,6 +24,9 @@ class Ligne:public Forme
 	
 	const char* getInfos(void);
 	
+	void Save(ofstream &) const;
+	void Load(ifstream &);
+	
 	~Ligne();
 	
 };

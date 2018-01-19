@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
+#include <fstream>
+
 
 using namespace std;
 
@@ -114,6 +116,56 @@ void Forme::Affiche() const
 int Forme::getCompteur()
 {
 	return cpt;
+}
+
+void Forme::Save(ofstream & file) const
+{	
+	int size = sizeof(id) + 1;
+	
+	file.write((char *)&size, sizeof(int));
+	file.write(id, size);
+	
+	position.Save(file);
+	
+	if(couleur)
+	{
+		file.write("1", sizeof(bool));
+		couleur->Save(file);
+	}
+	else
+		file.write("0", sizeof(bool));
+		
+	file.write((char*)&profondeur, sizeof(int));
+}
+
+
+
+void Forme::Load(ifstream & file)
+{
+	int size;
+	char * tempID;
+	Couleur * temCouleur;
+	
+	file.read((char *)&size, sizeof(int));
+	tempID = new char[size];
+	file.read(tempID, size);
+	setId(tempID);
+	delete tempID;
+	
+	position.Load(file);
+	
+	file.read((char*)&size, sizeof(bool));//reading boolean for couleur
+	
+	if(size)
+	{
+		temCouleur = new Couleur;
+		temCouleur->Load(file);
+		couleur = temCouleur;
+	}
+	else
+		couleur = NULL;
+		
+	file.read((char*)&profondeur, sizeof(int));
 }
 
 Forme::~Forme()

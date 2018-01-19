@@ -39,7 +39,10 @@ class Forme
 	
 	virtual const char* getInfos(void) = 0;
 	
-	~Forme();
+	void Save(ofstream &) const;
+	void Load(ifstream &);
+	
+	virtual ~Forme();
 	
 };
 

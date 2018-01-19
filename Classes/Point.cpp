@@ -4,6 +4,8 @@
 #include <string.h>
 #include <iostream>
 #include <math.h>
+#include <fstream>
+
 
 using namespace std;
 
@@ -83,13 +85,21 @@ ostream& operator<< (ostream &os, const Point &obj)
 	return os;
 }
 
+void Point::Save(ofstream & file) const
+{	
+	file.write((char*)&x, sizeof(int));
+	file.write((char*)&y, sizeof(int));
+}
+
+void Point::Load(ifstream & file)
+{
+	
+	file.read((char*)&x, sizeof(int));
+	file.read((char*)&y, sizeof(int));
+}
+
 Point::~Point()
 {
 	cpt--;
 }
-
-
-
-
-
 
