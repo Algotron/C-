@@ -8,6 +8,8 @@
 using namespace std;
 
 #include "Iterateur.h"
+#include "SmartPointer.h"
+#include "Forme.h"
 
 template <class T>
 Iterateur<T>::Iterateur(ListeBase<T> & lis)//initialisation
@@ -95,7 +97,7 @@ bool Iterateur<T>::operator++(int)
 }
 
 template <class T>
-Iterateur<T>::operator T()
+Iterateur<T>::operator T() const
 {
 	return current->valeur;
 }
@@ -109,9 +111,11 @@ T * Iterateur<T>::operator&()
 template <class T>
 Iterateur<T>::~Iterateur()
 {
-	list->~ListeBase();
+
 }
 
 template class Iterateur<int>;
+template class Iterateur<int *>;
 template class Iterateur<Couleur>;
-
+template class Iterateur<SmartPointer<Forme> >;
+template class Iterateur<SmartPointer<int> >;

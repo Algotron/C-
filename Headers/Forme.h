@@ -6,6 +6,8 @@
 
 class Forme
 {
+	friend ostream& operator<<(ostream &os, const Forme &obj);
+	
 	protected:
 	char * id;
 	Point position;
@@ -41,6 +43,10 @@ class Forme
 	
 	void Save(ofstream &) const;
 	void Load(ifstream &);
+	
+	bool operator<(const Forme &);
+	bool operator>(const Forme &);
+	bool operator==(const Forme &);
 	
 	virtual ~Forme();
 	

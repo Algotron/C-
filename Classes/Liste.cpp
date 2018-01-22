@@ -8,6 +8,7 @@
 using namespace std;
 
 #include "Liste.h"
+#include "Forme.h"
 
 template<class T>
 Liste<T>::Liste():ListeBase<T>::ListeBase()//default

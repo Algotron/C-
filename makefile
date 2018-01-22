@@ -9,10 +9,14 @@ FORME = Forme1-3/
 
 .SILENT:
 
-ALL : Test1 Test2 Test3 Test4 Test5 Test6
+ALL : Test1 Test2 Test3 Test4 Test5 Test6 Test7 Test8
+
+Test8: $(TEST)8.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o $(OBJECTS)SmartPointer.o
+		echo Creation Test8
+		$(COMPIL) $(TEST)8.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o $(OBJECTS)SmartPointer.o -o $(EXECUTABLES)Test8 $(HEAD)
 
 Test7: $(TEST)7.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o
-		echo Creation Test6
+		echo Creation Test7
 		$(COMPIL) $(TEST)7.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Pixel.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o -o $(EXECUTABLES)Test7 $(HEAD)
 
 Test6: $(TEST)6.cpp $(OBJECTS)Couleur.o $(OBJECTS)Point.o $(OBJECTS)Forme.o $(OBJECTS)Ligne.o $(OBJECTS)Rectangle.o $(OBJECTS)Pixel.o $(OBJECTS)BaseException.o $(OBJECTS)InvalidColorException.o $(OBJECTS)ListeBase.o $(OBJECTS)Liste.o $(OBJECTS)ListeTriee.o $(OBJECTS)Iterateur.o
@@ -47,8 +51,9 @@ Test1: $(TEST)1.cpp $(OBJECTS)Couleur.o $(OBJECTS)InvalidColorException.o $(OBJE
 
 
 
-
-
+$(OBJECTS)SmartPointer.o: $(CLASSES)SmartPointer.cpp $(HEADERS)SmartPointer.h
+		echo creation SmartPointer.o
+		$(COMPIL) $(CLASSES)SmartPointer.cpp -c $(HEAD) -o $(OBJECTS)SmartPointer.o
 
 $(OBJECTS)Iterateur.o: $(CLASSES)Iterateur.cpp $(HEADERS)Iterateur.h
 		echo creation Iterateur.o
@@ -127,4 +132,8 @@ clean:
 	
 7: 
 	./Executables/Test7
+	
+8: 
+	./Executables/Test8
+
 

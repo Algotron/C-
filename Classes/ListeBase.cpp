@@ -8,6 +8,8 @@
 using namespace std;
 
 #include "ListeBase.h"
+#include "SmartPointer.h"
+#include "Forme.h"
 
 template<class T>
 ListeBase<T>::ListeBase()//default
@@ -135,4 +137,7 @@ ListeBase<T>::~ListeBase()
 }
 
 template class ListeBase<int>;
+template class ListeBase<int*>;
 template class ListeBase<Couleur>;
+template class ListeBase<SmartPointer<int> >;
+template class ListeBase<SmartPointer<Forme> >;
