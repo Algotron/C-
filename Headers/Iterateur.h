@@ -24,7 +24,7 @@ class Iterateur
 	
 	bool operator++();
 	bool operator++(int);
-	operator T();
+	operator T() const;
 	T * operator&();
 	
 	~Iterateur();

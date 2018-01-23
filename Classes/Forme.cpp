@@ -5,7 +5,6 @@
 #include <iostream>
 #include <fstream>
 
-
 using namespace std;
 
 #include "Forme.h"
@@ -167,6 +166,46 @@ void Forme::Load(ifstream & file)
 		
 	file.read((char*)&profondeur, sizeof(int));
 }
+
+bool Forme::operator<(const Forme &obj)
+{
+	if (getProfondeur() < obj.getProfondeur())
+		return true;
+	return false;
+}
+
+bool Forme::operator>(const Forme &obj)
+{
+	if (getProfondeur() > obj.getProfondeur())
+		return true;
+	return false;
+}
+
+bool Forme::operator==(const Forme &obj)
+{
+	if (getProfondeur() == obj.getProfondeur())
+		return true;
+	return false;
+}
+
+ostream& operator<<(ostream &os, const Forme &obj)
+{
+	os << "[FORME: Id = " << obj.getId() << ", Position = ";
+	os<< obj.getPosition();
+
+	if (obj.getCouleur())
+	{
+		os << ", Couleur = ";
+		os << obj.getCouleur();
+	}
+	else
+		os << ", Couleur = Pas de couleur";
+
+	os << ", Profondeur = " << obj.getProfondeur() << "]";
+
+	return os;
+}
+
 
 Forme::~Forme()
 {

@@ -11,6 +11,7 @@ class Dessin
 	ListeTriee<SmartPointer<Forme> > formes;
 	
 	public :
+<<<<<<< HEAD
 	Dessin();
 	Dessin(int, int ,const Couleur&);
 	
@@ -30,6 +31,13 @@ class Dessin
 	void nouveauDessin();
 	
 	~Dessin();
+=======
+	Dessin() ;
+	Dessin(int, int ,const Couleur&) ;
+	void ajouteCouleur(const Couleur&) ;
+	void ajouteForme(Forme *, const char*) ;
+
+>>>>>>> test8
 } ;
 
 #endif

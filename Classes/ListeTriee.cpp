@@ -8,6 +8,8 @@
 using namespace std;
 
 #include "ListeTriee.h"
+#include "SmartPointer.h"
+#include "Forme.h"
 
 template<class T>
 ListeTriee<T>::ListeTriee():ListeBase<T>::ListeBase()//default
@@ -69,4 +71,7 @@ T* ListeTriee<T>::insere(const T &value)
 }
 
 template class ListeTriee<int>;
+template class ListeTriee<int*>;
 template class ListeTriee<Couleur>;
+template class ListeTriee<SmartPointer<int> >;
+template class ListeTriee<SmartPointer<Forme> >;
