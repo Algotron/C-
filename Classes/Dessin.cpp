@@ -112,13 +112,30 @@ void nouveauDessin()
 
 void Dessine()
 {
+	Rectangle *pr;
+	Ligne *pl;
+	Pixel *pp;
+
+	WindoSDL::setBackground(getFond().getRouge(), getFond().getVert(), getFond().getBleu());
+	
 	Iterateur<SmartPointer<Forme> > it(formes);
 	
 	while(!it.end())
 	{
 	
-		dynamic_cast it.valeur
-		it++;
+		pp = dynamic_cast<Pixel*> ((&it)->getVal());
+		
+		if(pp)
+			WindowSDL::setPixel(*pp.getRouge(), *pp.getVert(), *pp.getBleu(), getX(), getY());
+			
+		if(pl)
+			WindowSDL::drawLine(*pp.getRouge(), *pp.getVert(), *pp.getBleu(), getX(), getY(), getExtremite().getX(), getExtremite.getY());
+		
+		if(pr)
+			if(isRempli())
+				WindowSDL::fillRectangle(*pp.getRouge(), *pp.getVert(), *pp.getBleu(), getPosition().getX(), getPosition().getY(), getDimX(), getDimY());
+			else
+				WindowSDL::drawRectangle(*pp.getRouge(), *pp.getVert(), *pp.getBleu(), getPosition().getX(), getPosition().getY(), getDimX(), getDimY());
 	}
 }
 
